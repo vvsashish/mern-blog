@@ -12,7 +12,7 @@ const AddCommentForm = ({ articleName, onArticleUpdated }) => {
     const token = user && (await user.getIdToken());
     const headers = token ? { authtoken: token } : {};
     const response = await axios.post(
-      `/api/articles/${articleName}/comments`,
+      `https://mern-blog-backend-rho.vercel.app/api/articles/${articleName}/comments`,
       {
         postedBy: name,
         text: commentText,

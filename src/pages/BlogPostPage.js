@@ -23,9 +23,12 @@ const ArticlePage = () => {
     const loadArticleInfo = async () => {
       const token = user && (await user.getIdToken());
       const headers = token ? { authtoken: token } : {};
-      const response = await axios.get(`/api/articles/${articleId}`, {
-        headers,
-      });
+      const response = await axios.get(
+        `https://mern-blog-backend-rho.vercel.app/api/articles/${articleId}`,
+        {
+          headers,
+        }
+      );
       const newArticleInfo = response.data;
       setArticleInfo(newArticleInfo);
     };
@@ -41,7 +44,7 @@ const ArticlePage = () => {
     const token = user && (await user.getIdToken());
     const headers = token ? { authtoken: token } : {};
     const response = await axios.put(
-      `/api/articles/${articleId}/upvote`,
+      `https://mern-blog-backend-rho.vercel.app/api/articles/${articleId}/upvote`,
       null,
       { headers }
     );

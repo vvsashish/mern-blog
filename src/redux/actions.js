@@ -5,7 +5,9 @@ export const SET_SUBSCRIPTION_STATUS = "SET_SUBSCRIPTION_STATUS";
 
 export const checkSubscriptionStatus = (email) => async (dispatch) => {
   try {
-    const response = await axios.get(`/isSubscribed?email=${email}`);
+    const response = await axios.get(
+      `https://mern-blog-backend-rho.vercel.app/api/isSubscribed?email=${email}`
+    );
     dispatch({
       type: SET_SUBSCRIPTION_STATUS,
       payload: response.data.isSubscribed,
@@ -17,7 +19,9 @@ export const checkSubscriptionStatus = (email) => async (dispatch) => {
 
 export const subscribe = (email) => async (dispatch) => {
   try {
-    await axios.post("/subscribe", { email });
+    await axios.post("https://mern-blog-backend-rho.vercel.app/api/subscribe", {
+      email,
+    });
     dispatch({ type: SET_SUBSCRIPTION_STATUS, payload: true });
     alert("Subscription successful");
   } catch (error) {

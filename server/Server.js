@@ -14,7 +14,7 @@ admin.initializeApp({
 
 const app = express();
 const corsOptions = {
-  origin: "https://mern-blog-backend-rho.vercel.app", // Replace with your allowed origin
+  origin: "", // Replace with your allowed origin
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type,Authorization",
   credentials: true,
@@ -52,7 +52,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.get("/isSubscribed", async (req, res) => {
+app.get("/api/isSubscribed", async (req, res) => {
   const { email } = req.query;
 
   try {
@@ -63,7 +63,7 @@ app.get("/isSubscribed", async (req, res) => {
   }
 });
 
-app.post("/subscribe", async (req, res, next) => {
+app.post("/api/subscribe", async (req, res, next) => {
   const { email } = req.body;
 
   if (!email) {

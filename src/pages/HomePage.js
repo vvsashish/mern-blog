@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import useUser from "../hooks/useUser";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { checkSubscriptionStatus, subscribe } from "../redux/actions";
 const HomePage = () => {
