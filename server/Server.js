@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 import sendSubscriptionEmail from "./utils/Mailer.js";
 import Subscription from "./models/Subscription.js";
 import cors from "cors";
-const credentials = JSON.parse(fs.readFileSync("./credentials.json"));
+const credentials = JSON.parse(process.env.REACT_APP_FIREBASE_CREDENTIALS);
 admin.initializeApp({
   credential: admin.credential.cert(credentials),
 });
