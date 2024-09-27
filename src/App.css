@@ -1,38 +1,128 @@
+#root {
+  background-color: #ffe4c4ed;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+}
+header {
+  flex-shrink: 0;
+}
+main {
+  flex-grow: 1;
+  margin-top: 5rem;
+}
+footer {
+  flex-shrink: 0;
+  background-color: #343a40;
   color: white;
+  padding: 1rem;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.nav-link.active {
+  color: #fff;
+  background-color: #48410a;
 }
-
-@keyframes App-logo-spin {
+.toast-message {
+  position: fixed;
+  top: 4rem;
+  right: 0.5rem;
+  color: white !important;
+}
+#logo {
+  animation: fill 0.5s ease forwards 5s;
+}
+#logo path:nth-child(1) {
+  stroke-dasharray: 360px;
+  stroke-dashoffset: 360px;
+  animation: line-anim 2s ease forwards;
+}
+#logo path:nth-child(2) {
+  stroke-dasharray: 299px;
+  stroke-dashoffset: 299px;
+  animation: line-anim 2s ease forwards 0.3s;
+}
+#logo path:nth-child(3) {
+  stroke-dasharray: 459px;
+  stroke-dashoffset: 459px;
+  animation: line-anim 2s ease forwards 0.6s;
+}
+#logo path:nth-child(4) {
+  stroke-dasharray: 195px;
+  stroke-dashoffset: 195px;
+  animation: line-anim 2s ease forwards 0.9s;
+}
+#logo path:nth-child(5) {
+  stroke-dasharray: 300px;
+  stroke-dashoffset: 300px;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+#logo path:nth-child(6) {
+  stroke-dasharray: 360px;
+  stroke-dashoffset: 360px;
+  animation: line-anim 2s ease forwards 1.5s;
+}
+#logo path:nth-child(7) {
+  stroke-dasharray: 289px;
+  stroke-dashoffset: 289px;
+  animation: line-anim 2s ease forwards 1.8s;
+}
+#logo path:nth-child(8) {
+  stroke-dasharray: 297px;
+  stroke-dashoffset: 297px;
+  animation: line-anim 2s ease forwards 2.1s;
+}
+#logo path:nth-child(9) {
+  stroke-dasharray: 299px;
+  stroke-dashoffset: 299px;
+  animation: line-anim 2s ease forwards 2.4s;
+}
+#logo path:nth-child(10) {
+  stroke-dasharray: 342px;
+  stroke-dashoffset: 342px;
+  animation: line-anim 2s ease forwards 2.7s;
+}
+#logo path:nth-child(11) {
+  stroke-dasharray: 363px;
+  stroke-dashoffset: 363px;
+  animation: line-anim 2s ease forwards 3s;
+}
+#logo path:nth-child(12) {
+  stroke-dasharray: 299px;
+  stroke-dashoffset: 299px;
+  animation: line-anim 2s ease forwards 3.3s;
+}
+#logo path:nth-child(13) {
+  stroke-dasharray: 195px;
+  stroke-dashoffset: 195px;
+  animation: line-anim 2s ease forwards 3.6s;
+}
+#logo path:nth-child(14) {
+  stroke-dasharray: 459px;
+  stroke-dashoffset: 459px;
+  animation: line-anim 2s ease forwards 3.9s;
+}
+#logo path:nth-child(15) {
+  stroke-dasharray: 297px;
+  stroke-dashoffset: 297px;
+  animation: line-anim 2s ease forwards 4.2s;
+}
+#logo path:nth-child(16) {
+  stroke-dasharray: 362px;
+  stroke-dashoffset: 362px;
+  animation: line-anim 2s ease forwards 4.5s;
+}
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
   from {
-    transform: rotate(0deg);
+    fill: transparent;
   }
   to {
-    transform: rotate(360deg);
+    fill: white;
   }
 }
