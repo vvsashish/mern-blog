@@ -14,7 +14,7 @@ admin.initializeApp({
 
 const app = express();
 const corsOptions = {
-  origin: "https://www.comicconfessions.com/", // Replace with your allowed origin
+  origin: "https://mern-blog-backend-rho.vercel.app", // Replace with your allowed origin
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type,Authorization",
   credentials: true,
