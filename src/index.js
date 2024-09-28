@@ -10,13 +10,13 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDz6pynCXdCsuF4XwMY1iHvTYSwzRANTu8",
-  authDomain: "comicconfessions-7f09b.firebaseapp.com",
-  projectId: "comicconfessions-7f09b",
-  storageBucket: "comicconfessions-7f09b.appspot.com",
-  messagingSenderId: "872048187977",
-  appId: "1:872048187977:web:0e9c0d1ff2aa94cc137d98",
-  measurementId: "G-Q25RMQH049",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
