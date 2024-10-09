@@ -2,7 +2,7 @@
   "name": "mern-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vercel.com/vvsashishs-projects/mern-blog",
+  "homepage": "https://mern-blog-beta-two.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
