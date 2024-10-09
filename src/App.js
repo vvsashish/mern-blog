@@ -11,6 +11,7 @@ import MyNavbar from "./components/NavBar";
 import Footer from "./components/Footer";
 import CreateNewArticle from "./pages/NewBlogPost";
 import UserProfile from "./pages/UserProfilePage";
+import ChatRoom from "./pages/ChatRoom";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<CreateAccountPage />} />
             <Route path="/user-profile" element={<UserProfile />} />
+            <Route path="/chat-room" element={<ChatRoom />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

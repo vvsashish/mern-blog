@@ -7,12 +7,17 @@ import mongoose from "mongoose";
 import sendSubscriptionEmail from "./utils/Mailer.js";
 import Subscription from "./models/Subscription.js";
 import cors from "cors";
+import { createServer } from "http";
+import { Server } from "socket.io";
+import messageRoutes from "./routes/Messages.js";
+
 const credentials = JSON.parse(process.env.REACT_APP_FIREBASE_CREDENTIALS);
 admin.initializeApp({
   credential: admin.credential.cert(credentials),
 });
 
 const app = express();
+
 const corsOptions = {
   origin: "https://mern-blog-front-end.vercel.app/", // Replace with your allowed origin
   methods: "GET,POST,PUT,DELETE",
@@ -20,7 +25,10 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
+
+const httpServer = createServer(app);
+const io = new Server(httpServer);
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../build")));
@@ -35,6 +43,23 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 );
+const connection = mongoose.connection;
+connection.once("open", () => {
+  console.log("MongoDB connection established successfully");
+});
+app.use("/messages", messageRoutes);
+
+io.on("connection", (socket) => {
+  console.log(`Socket ${socket.id} connected`);
+
+  socket.on("sendMessage", (message) => {
+    io.emit("message", message);
+  });
+
+  socket.on("disconnect", () => {
+    console.log(`Socket ${socket.id} disconnected`);
+  });
+});
 
 app.use(async (req, res, next) => {
   const { authtoken } = req.headers;
@@ -158,7 +183,7 @@ const PORT = process.env.PORT || 8000;
 
 connectToDb(() => {
   console.log("Successfully connected to database!");
-  app.listen(PORT, () => {
+  httpServer.listen(PORT, () => {
     console.log("Server is listening on port " + PORT);
   });
 });
