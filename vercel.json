@@ -6,15 +6,15 @@
       "use": "@vercel/node"
     },
     {
-      "src": "client/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
-      "config": { "distDir": "client/build" }
+      "config": { "distDir": "build" }
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/client/build/static/$1"
+      "dest": "/build/static/$1"
     },
     {
       "src": "/(.*)",
