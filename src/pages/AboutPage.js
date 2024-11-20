@@ -1,12 +1,13 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import "../App.css";
 
 const AboutPage = () => {
   return (
     <Container>
       <Row className="justify-content-center">
         <Col>
-          <Card className="shadow-lg mb-4">
+          <Card className="home-cards shadow-lg mb-4 ">
             <Card.Body>
               <Card.Title className="text-center mb-4">
                 <h2>About The Blog Site</h2>

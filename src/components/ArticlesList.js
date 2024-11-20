@@ -9,7 +9,7 @@ const ArticlesList = ({ articles }) => {
       {articles.map((article) => (
         <Row className="my-4 mx-4">
           <Col className="mb-4" key={article.name}>
-            <Card className="h-100 shadow-sm mt-2">
+            <Card className="h-100 shadow-sm mt-2 home-cards">
               <Card.Body>
                 <Card.Title>{article.title}</Card.Title>
                 <Card.Text>{article.content[0]}</Card.Text>

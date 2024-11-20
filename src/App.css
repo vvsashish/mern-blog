@@ -1,5 +1,37 @@
 #root {
-  background-color: #ffe4c4ed;
+  background: linear-gradient(
+    -45deg,
+    #4158d0,
+    #e560dc,
+    #ffb374d0,
+    #ef5f5f,
+    #d840b6
+  );
+}
+
+.home-cards {
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-container .card-content {
+  position: relative;
+  width: 80%;
+  height: 300px;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-container .card-content .home-cards {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
 }
 .App {
   display: flex;
@@ -133,4 +165,10 @@ footer {
   to {
     fill: white;
   }
+}
+.gradient-text {
+  background: linear-gradient(45deg, #ff0a78, #5773ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

@@ -29,6 +29,9 @@ const NavBar = () => {
               <Nav.Link as={NavLink} to="/new-blog-post">
                 Create an article
               </Nav.Link>
+              <Nav.Link as={NavLink} to="/chat-room">
+                Confessions (New)
+              </Nav.Link>
             </Nav>
             <Nav className="ml-auto">
               {!user && (
